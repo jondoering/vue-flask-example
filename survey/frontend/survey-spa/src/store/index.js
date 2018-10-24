@@ -23,7 +23,7 @@ const actions = {
   },
   loadSurvey(context, { id }) {
     return fetchSurvey(id)
-      .then((response) => context.commit('setSurvey', { survey: response }))
+      .then((response) => context.commit('setSurvey', { survey: response}))
   },
   addSurveyResponse(context) {
     return saveSurveyResponse(context.state.currentSurvey)
@@ -46,7 +46,6 @@ const mutations = {
     }
     state.currentSurvey = payload.survey
   },
-
   setChoice(state, payload) {
     const { questionId, choice } = payload
     const nQuestions = state.currentSurvey.questions.length
